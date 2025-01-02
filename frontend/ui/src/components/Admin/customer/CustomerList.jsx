@@ -37,19 +37,40 @@ function CustomerList() {
   const exportPDF = () => {
     const doc = new jsPDF();
   
-    const logoURL = "../../assets/logo.png"; // Adjust with your own logo path
-    doc.addImage(logoURL, "PNG", 170, 10, 20, 20);
+    // Add Company Logo
+    const logoURL = "../../assets/logo.png"; // Placeholder logo, replace with your actual logo path
+    doc.addImage(logoURL, "PNG", 170, 10, 20, 20); // Adjust logo position and size
   
     // Add Invoice Title
     doc.setFontSize(22);
     doc.setFont("helvetica", "bold");
     doc.text("Customer List", 14, 22);
   
+    // Add Date and Invoice ID
+    doc.setFontSize(12);
+    doc.setFont("helvetica", "normal");
+    doc.text(`Date: ${new Date().toLocaleDateString()}`, 14, 30);
+    doc.text(`Invoice ID: ${Math.floor(Math.random() * 100000)}`, 14, 36);
+  
     // Add Divider
     doc.setDrawColor(0, 0, 0);
-    doc.setLineWidth(0.2);
-    doc.line(14, 30, 196, 30); // Horizontal line
+    doc.setLineWidth(0.5);
+    doc.line(14, 40, 196, 40); // Horizontal line
   
+    // Company Details Section
+    doc.setFontSize(12);
+    doc.setTextColor(100);
+    doc.text("Company Name: Ceylon Gem Gallery", 14, 50);
+    doc.text("Address: 123 Gem Street, Colombo, Sri Lanka", 14, 56);
+    doc.text("Email: info@ceylongemgallery.com", 14, 62);
+    doc.text("Phone: +94 76 039 4961", 14, 68);
+  
+    // Add Table Header
+    doc.setFontSize(14);
+    doc.setTextColor(0, 0, 0);
+    doc.text("Customer Details", 14, 80);
+  
+    // Table Columns and Rows
     const tableColumn = ["#", "First Name", "Last Name", "Email", "Password"];
     const tableRows = [];
   
@@ -64,34 +85,36 @@ function CustomerList() {
       tableRows.push(customerData);
     });
   
-    // Auto-table for PDF with custom styling
+    // Table Style
     doc.autoTable({
       head: [tableColumn],
       body: tableRows,
-      startY: 40, // Start position of the table
+      startY: 90, // Start position for the table
       styles: {
-        fontSize: 10,            // Font size for the table content
-        cellPadding: 3,          // Padding inside table cells
-        halign: 'center',        // Center align text in all cells
-        valign: 'middle',        // Vertically center the text
-        lineWidth: 0.2,          // Table border line width
-        lineColor: [0, 0, 0],    // Border color
-        font: "helvetica",       // Font family
+        fontSize: 10,
+        cellPadding: 4,
+        textColor: [0, 0, 0],
+        lineColor: [0, 0, 0],
+        lineWidth: 0.1,
       },
       headStyles: {
-        fillColor: [62, 146, 99], // Header background color
-        textColor: [255, 255, 255], // Header text color
-        fontSize: 12,               // Font size for header
-        fontStyle: "bold",          // Bold header text
+        fillColor: [65, 117, 88],
+        textColor: [255, 255, 255],
+      },
+      bodyStyles: {
+        fillColor: [245, 245, 245],
+        textColor: [0, 0, 0],
       },
       alternateRowStyles: {
-        fillColor: [240, 240, 240], // Alternate row background color
+        fillColor: [220, 220, 220],
       },
-      margin: { top: 40 }, // Top margin for the table
+      margin: { top: 90 },
     });
   
-    doc.save("customer-list.pdf"); // Save the PDF
+    // Save the PDF
+    doc.save("customer-list.pdf");
   };
+  
   
 
   return (
