@@ -15,7 +15,7 @@ const GemCutCard = ({ gemCut }) => {
         <h3 className="card-title">{gemCut.name}</h3>
         <p className="card-description">{gemCut.description}</p>
         <Link to={`/user/showdetails/${gemCut._id}`}>
-          <button className="Cut-Update">Details</button>
+          <button className="Cut-Update">Details</button> 
         </Link>
       </div>
     </div>
