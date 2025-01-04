@@ -1,8 +1,13 @@
 .Main_div_PC101 {
-    background-color: #d9d9d9;
+    background-color: rgb(218, 218, 218, 0.8);
     border-radius: 25px;
     padding: 20px;
-    margin: 20px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .mcontiner_PC101 {
@@ -13,11 +18,11 @@
 
 .email-container_PC101 {
     background-color: #ffffff;
-    padding: 10px 20px;
+    padding: 20px 20px;
     border-radius: 25px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin: auto;
-    margin-top: 13px;
+    margin-top: 20px;
     font-family: 'Arial', sans-serif;
 }
 
@@ -26,7 +31,7 @@
     margin: 0;
     font-size: 18px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 1px;
 }
 
 .email-content_PC101 {
