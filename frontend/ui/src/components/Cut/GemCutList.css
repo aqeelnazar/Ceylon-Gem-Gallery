@@ -32,7 +32,6 @@
     outline: none; /* Remove outline on focus */
 }
 
-
 .search-input:focus {
     border-color: hsl(146, 40%, 41%); /* Change border color on focus */
     box-shadow: 0 0 5px rgba(62, 146, 99, 0.5); /* Optional shadow */
