@@ -9,12 +9,12 @@
 .show_GemCutList{
     padding: 10px;
 }
+
 /* GemCutList.css */
 .show_GemCutList {
     padding: 10px; /* Add some padding around the list */
     min-height: 50vh;
 }
-
 
 .search-container {
     margin-top: auto;
