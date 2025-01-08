@@ -70,8 +70,8 @@ function ShowGemCutDetails() {
     // Estimated finish date (3 days after handover)
     const estimatedFinishDate = new Date(handOverDeadline);
     estimatedFinishDate.setDate(estimatedFinishDate.getDate() + 3); // 3 days after handover
-  
-    
+
+
     // Text details
     doc.setFontSize(12).setFont('helvetica', 'normal')
       .text(`Order Set Date: ${orderSetDate.toLocaleDateString()}`, 14, 30)
