@@ -7,8 +7,6 @@ const TrackOrder = () => {
   const [jobDetails, setJobDetails] = useState(null);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false); // Added loading state
-
-  
   
   const handleTrackOrder = async (e) => {
     e.preventDefault();
