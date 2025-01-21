@@ -20,7 +20,6 @@ const Navbar = () => {
 
   return (
     <div className="layout-container">
-
       <div className="navbar-container">
         <div className="navbar-background">
           {/* Logo Section */}
